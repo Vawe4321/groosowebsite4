@@ -8,6 +8,7 @@ import { Link as ScrollLink } from 'react-scroll'
 import { StyledButton } from '@/components/styled-button'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 import headLineCurveImage from '../../../public/images/headline-curve.svg'
+import HeroImage from '../../../public/images/home-hero.png'
 
 interface Exp {
   label: string
@@ -160,7 +161,7 @@ const HomeHero: FC = () => {
           <Grid item xs={12} md={5} sx={{ position: 'relative' }}>
             <Box sx={{ lineHeight: 0 }}>
               <Image
-                src="/images/home-hero.png"
+                src={HeroImage}
                 alt="Hero img"
                 width={775}
                 height={787}
