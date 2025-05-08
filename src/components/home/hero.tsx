@@ -17,18 +17,9 @@ interface ExpItemProps {
 }
 
 const exps: Array<Exp> = [
-  {
-    label: 'Customers',
-    value: '10K+',
-  },
-  {
-    label: 'Partnered Companies',
-    value: '20+',
-  },
-  {
-    label: 'Custom Services',
-    value: '10+',
-  },
+  { label: 'Customers', value: '10K+' },
+  { label: 'Partnered Companies', value: '20+' },
+  { label: 'Custom Services', value: '10+' },
 ]
 
 const ExpItem: FC<ExpItemProps> = ({ item }) => {
@@ -36,7 +27,12 @@ const ExpItem: FC<ExpItemProps> = ({ item }) => {
   return (
     <Box sx={{ textAlign: 'center', mb: { xs: 1, md: 0 } }}>
       <Typography
-        sx={{ color: 'secondary.main', mb: { xs: 1, md: 2 }, fontSize: { xs: 34, md: 44 }, fontWeight: 'bold' }}
+        sx={{
+          color: 'secondary.main',
+          mb: { xs: 1, md: 2 },
+          fontSize: { xs: 34, md: 44 },
+          fontWeight: 'bold',
+        }}
       >
         {value}
       </Typography>
@@ -83,21 +79,25 @@ const HomeHero: FC = () => {
                       backgroundColor: 'unset',
                     }}
                   >
-                 Grooso{' '}
+                    Grooso{' '}
                     <Box
                       sx={{
                         position: 'absolute',
                         top: { xs: 24, md: 34 },
                         left: 2,
                         transform: 'rotate(3deg)',
-                        '& img': { width: { xs: 146, md: 210 }, height: 'auto' },
                       }}
                     >
-                      {/* eslint-disable-next-line */}
-                      <img src="/images/headline-curve.svg" alt="Headline curve" />
+                      <Image
+                        src="/images/headline-curve.svg"
+                        alt="Headline curve"
+                        width={210}
+                        height={40}
+                        style={{ width: '100%', height: 'auto' }}
+                      />
                     </Box>
                   </Typography>
-                  – India’s Modern{' '}
+                  – India&rsquo;s Modern{' '}
                   <Typography
                     component="span"
                     sx={{
@@ -112,7 +112,8 @@ const HomeHero: FC = () => {
                         height: 'auto',
                       },
                     }}
-                  > Market
+                  >
+                    Market
                     <svg version="1.1" viewBox="0 0 3183 3072">
                       <g id="Layer_x0020_1">
                         <path
@@ -131,13 +132,13 @@ const HomeHero: FC = () => {
                     </svg>
                   </Typography>{' '}
                   <br />
-                 for Everything You Need.
+                  for Everything You Need.
                 </Typography>
               </Box>
               <Box sx={{ mb: 4, width: { xs: '100%', md: '70%' } }}>
                 <Typography sx={{ color: 'text.secondary', lineHeight: 1.6 }}>
                   {
-                    "Grooso is India’s NextGen commerce platform — combining groceries, fashion, gifting, and customization in one powerful shopping experience. Explore 10,000+ curated products, delivered smartly across the nation."
+                    "Grooso is India&rsquo;s NextGen commerce platform — combining groceries, fashion, gifting, and customization in one powerful shopping experience. Explore 10,000+ curated products, delivered smartly across the nation."
                   }
                 </Typography>
               </Box>
@@ -148,7 +149,7 @@ const HomeHero: FC = () => {
                   </StyledButton>
                 </ScrollLink>
                 <ScrollLink to="video-section" spy={true} smooth={true} offset={0} duration={350}>
-                  <StyledButton color="primary" size="large" variant="outlined" >
+                  <StyledButton color="primary" size="large" variant="outlined">
                     Learn more
                   </StyledButton>
                 </ScrollLink>
@@ -156,57 +157,20 @@ const HomeHero: FC = () => {
             </Box>
           </Grid>
           <Grid item xs={12} md={5} sx={{ position: 'relative' }}>
-            {/* Sertificate badge */}
-            {/* <Box
-              sx={{
-                position: 'absolute',
-                bottom: 30,
-                left: { xs: 0, md: -150 },
-                boxShadow: 1,
-                borderRadius: 3,
-                px: 2,
-                py: 1.4,
-                zIndex: 1,
-                backgroundColor: 'background.paper',
-                display: 'flex',
-                alignItems: 'flex-start',
-                width: 280,
-              }}
-            >
-              <Box
-                sx={{
-                  boxShadow: 1,
-                  borderRadius: '50%',
-                  width: 44,
-                  height: 44,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  mr: 2,
-                  '& img': { width: '32px !important', height: 'auto' },
-                }}
-              >
-                <Image src="/images/certificate.png" alt="Certificate icon" width={50} height={50} quality={97} />
-              </Box>
-              <Box>
-                <Typography
-                  component="h6"
-                  sx={{ color: 'secondary.main', fontSize: '1.1rem', fontWeight: 700, mb: 0.5 }}
-                >
-                  Certificate
-                </Typography>
-                <Typography variant="subtitle1" sx={{ color: 'text.secondary', lineHeight: 1.3 }}>
-                  There are certificates for all courses.
-                </Typography>
-              </Box>
-            </Box> */}
             <Box sx={{ lineHeight: 0 }}>
-              <Image objectFit='cover' src="/images/home-hero.png" width={775} height={787} alt="Hero img" />
+              <Image
+                src="/images/home-hero.png"
+                alt="Hero img"
+                width={775}
+                height={787}
+                style={{ objectFit: 'cover' }}
+                priority
+              />
             </Box>
           </Grid>
         </Grid>
 
-        {/* Experience */}
+        {/* Experience Section */}
         <Box sx={{ boxShadow: 2, py: 4, px: 7, borderRadius: 4 }}>
           <Grid container spacing={2}>
             {exps.map((item) => (
@@ -220,4 +184,5 @@ const HomeHero: FC = () => {
     </Box>
   )
 }
+
 export default HomeHero
