@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography'
 import { Link as ScrollLink } from 'react-scroll'
 import { StyledButton } from '@/components/styled-button'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
+import headLineCurveImage from '../../../public/images/headline-curve.svg'
 
 interface Exp {
   label: string
@@ -89,7 +90,7 @@ const HomeHero: FC = () => {
                       }}
                     >
                       <Image
-                        src="/images/headline-curve.svg"
+                        src={headLineCurveImage}
                         alt="Headline curve"
                         width={210}
                         height={40}
