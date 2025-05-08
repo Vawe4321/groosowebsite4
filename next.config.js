@@ -1,14 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-    eslint: {
-    ignoreDuringBuilds: true,
+  images: {
+    // Allows use of local images under the /public/images path
+    localPatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+        pathname: '/images/**',
+      },
+      {
+        protocol: 'http',
+        hostname: '**',
+        pathname: '/images/**',
+      },
+    ],
   },
-   images: {
-    unoptimized: true,
-  }
-
-  
 }
 
 module.exports = nextConfig
